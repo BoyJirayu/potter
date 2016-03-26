@@ -1,14 +1,9 @@
 body{
 	background-color: #FAFAD2;
-
 }
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 3;
-    overflow: hidden;
-    background-color: #696969;
-    font-family: "Comic Sans MS", cursive, sans-serif;
+h1{
+	font-size: 60;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .aa{
