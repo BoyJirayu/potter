@@ -106,22 +106,22 @@ var angular = angular.module('potterApp', [])
         if (watch === 2) {
           $scope.promotion += ((watch * 100) * 0.1)
           console.log('2')
-        }else if (watch === 3) {
+        } else if (watch === 3) {
           $scope.promotion += ((watch * 100) * 0.2)
           console.log('3')
-        }else if (watch === 4) {
+        } else if (watch === 4) {
           $scope.promotion += ((watch * 100) * 0.3)
           console.log('4')
-        }else if (watch === 5) {
+        } else if (watch === 5) {
           $scope.promotion += ((watch * 100) * 0.4)
           console.log('5')
-        }else if (watch === 6) {
+        } else if (watch === 6) {
           $scope.promotion += ((watch * 100) * 0.5)
           console.log('6')
-        }else if (watch === 7) {
+        } else if (watch === 7) {
           $scope.promotion += ((watch * 100) * 0.6)
           console.log('7')
-        }else if (watch === 0) {
+        } else if (watch === 0) {
           exit = 1
           console.log('exit')
         }
