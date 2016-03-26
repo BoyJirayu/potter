@@ -1,5 +1,4 @@
-## Step use Web Ban9Jin
-## Harry Potter
+## การใช้งาน Web Ban9Jin (Harry Potter)
 ### 1. Clone
 ######ทำการ clone folder ลงบนเครื่องของตัวเอง
 ```
@@ -16,7 +15,7 @@ $ npm install
 $ npm start
 ```
 ### 4. Test
-######คำสั่ง run file test เพื่อทำการ test การทำงาน ของ Programe
+######คำสั่ง run file test เพื่อทำการ test การทำงาน ของ Program
 ```
 $ npm test
 ```
