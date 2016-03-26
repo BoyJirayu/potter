@@ -11,15 +11,18 @@
 
 	<script src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 	<script src="potter.js"></script>
+	<script src="eiei.js"></script>
 	<link rel="stylesheet" type="text/css" href="test.css">
 </head>
 <body ng-controller="PotterListController">
 <center>
 <div class="row">
 	<div class="col-xs-12">
+		<ul>
 		  <center>
-		  	<h1>Ban9Jin <small>sell a book</small></h1>
+		  	<h1>Ban9Jin <small><font color="white">sell a book</font></small></h1>
 		  </center>
+		</ul>
 	</div>
 	<div class="progress"><div class="indeterminate"></div></div>
 	<div class="col s10 offset-s1">
@@ -29,7 +32,7 @@
 				<table>
 					<tr>
 						<center>
-							<img ng-src="./image/{{harry.img}}" class="img-rounded" width="120px" height="150px">
+							<img ng-src="./image/{{harry.img}}" class="circle" width="120px" height="150px">
 						</center>
 					</tr>
 					<tr>
@@ -87,22 +90,22 @@
 		<div class="card-panel red darken-3">
 			<center>
 				<h5>
-					BILL <small>ชำระค่าสินค้า</small>
+					BILL <small>pay to product</small>
 				</h5>
 			</center>
 		</div>
 		<table class="striped">
 			<tr>
 				<td><center>
-						ราคารวม >>
+						Price >>
 				</td>
 				<td><center>
-						<div id="summy">{{sum}} ฿<div>
+						{{sum}} ฿
 				</td>
 			</tr>
 			<tr>
 				<td><center>
-						ส่วนลด >>
+						Discount >>
 				</td>
 				<td><center>
 						{{promotion}} ฿
@@ -110,7 +113,7 @@
 			</tr>
 			<tr>
 				<td><center>
-						รวมสุทธิ >>
+						Total net >>
 				</td>
 				<td><center>
 						<div id="fin">{{final}} ฿</div>

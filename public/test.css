@@ -1,9 +1,13 @@
 body{
 	background-color: #FAFAD2;
-}
-h1{
-	font-size: 60;
 	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 1;
+    overflow: hidden;
+    background-color: #696969;
 }
 
 .aa{
