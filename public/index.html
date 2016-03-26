@@ -49,7 +49,7 @@
 						</tr>
 						<tr>
 							<center>
-								<button ng-click="add(harry)" class="btn btn-info">BUY</button>
+								<button ng-click="add(harry)" class="btn btn-info" id="cart{{$index+1}}">BUY</button>
 							</center>
 						</tr>
 				</table>
@@ -82,7 +82,7 @@
 					ราคา :: {{choice.amount*100}}฿
 				</td>
 				<td>
-					<button ng-click="remove(choice)" class="btn btn-danger">Remove</button>
+					<button ng-click="remove(choice)" class="btn btn-danger" id="del{{$index+1}}">Remove</button>
 				</td>
 			</tr>
 		</table>
@@ -106,7 +106,7 @@
 				</td>
 				<td><center>
 					<h4>
-						{{sum}} ฿
+						<div id="summy">{{sum}} ฿<div>
 					</h4>
 				</td>
 			</tr>
@@ -130,7 +130,7 @@
 				</td>
 				<td><center>
 					<h4>
-						{{final}} ฿
+						<div id="fin">{{final}} ฿</div>
 					</h4>
 				</td>
 			</tr>
