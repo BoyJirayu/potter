@@ -2,14 +2,12 @@
 <head>
 	<title>Ban Nai Jin</title>
 	<meta charset="UTF-8">
-	<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- Compiled and minified CSS -->
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	  <!-- Compiled and minified JavaScript -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 
 	<script src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 	<script src="potter.js"></script>
@@ -23,7 +21,8 @@
 		  	<h1>Ban9Jin <small>sell a book</small></h1>
 		  </center>
 	</div>
-	<div class="col-xs-10 col-xs-offset-1">
+	<div class="progress"><div class="indeterminate"></div></div>
+	<div class="col s10 offset-s1">
 		<table><br>
 			<tr>
 				<td ng-repeat="harry in book">
@@ -34,20 +33,20 @@
 						</center>
 					</tr>
 					<tr>
-							<h4>
-								Harry Potter <small>{{harry.name}}</small>
-							</h4>
+					 		Harry Potter <small>{{harry.name}}</small>
 						</tr>
 						<tr>
 							<center>
-								<h4>
+								<h5>
 									{{harry.price}} ฿
-								</h4>
+								</h5>
 							</center>
 						</tr>
 						<tr>
 							<center>
-								<button ng-click="add(harry)" class="btn btn-info" id="cart{{$index+1}}">BUY</button>
+								<a ng-click="add(harry)" class="btn waves-effect waves-light" id="cart{{$index+1}}">
+									<i class="material-icons">shopping_cart</i>
+								</a>
 							</center>
 						</tr>
 				</table>
@@ -56,80 +55,65 @@
 		</table>
 	</div>
 </div>
+<div class="progress"><div class="indeterminate"></div></div>
 <br><br>
 <div class="row">
-	<div class="col-xs-5 col-xs-offset-1 aa">
-		<table class="table table-striped">
-			<tr>
-				<td colspan="3" class="info">
-					<center>
-						<h3>
-							ORDER <small>products</small>
-						</h3>
-					</center>
-				</td>
-			</tr>
+	<div class="col s5 offset-s1 aa">
+		<div class="card-panel teal lighten-2">
+			<center>
+				<h5>
+					ORDER <small>products</small>
+				</h5>
+			</center>
+		</div>
+		<table class="striped">
 			<tr ng-repeat="choice in buy">
 				<td>
-					<h5>
 						Harry Potter<br>{{choice.name}}
-					</h5>
 				</td>
 				<td>
 					Amount :: {{choice.amount}} <br>
 					Price :: {{choice.amount*100}}฿
 				</td>
 				<td>
-					<button ng-click="remove(choice)" class="btn btn-danger" id="del{{$index+1}}">Remove</button>
+					<a ng-click="remove(choice)" class="btn btn-danger red" id="del{{$index+1}}">
+						<i class="material-icons">delete</i>
+					</a>
 				</td>
 			</tr>
 		</table>
 	</div>
-	<div class="col-xs-4 col-xs-offset-1 aa">
-		<table class="table table-striped">
-			<tr>
-				<td colspan="3" class="danger">
-					<center>
-						<h3>
-							BILL <small>ชำระค่าสินค้า</small>
-						</h3>
-					</center>
-				</td>
-			</tr>
+	<div class="col s4 offset-s1 aa">
+		<div class="card-panel red darken-3">
+			<center>
+				<h5>
+					BILL <small>ชำระค่าสินค้า</small>
+				</h5>
+			</center>
+		</div>
+		<table class="striped">
 			<tr>
 				<td><center>
-					<h4>
 						ราคารวม >>
-					</h4>
 				</td>
 				<td><center>
-					<h4>
 						<div id="summy">{{sum}} ฿<div>
-					</h4>
 				</td>
 			</tr>
 			<tr>
 				<td><center>
-					<h4>
 						ส่วนลด >>
-					</h4>
 				</td>
 				<td><center>
-					<h4>
 						{{promotion}} ฿
-					</h4>
 				</td>
 			</tr>
 			<tr>
 				<td><center>
-					<h4>
 						รวมสุทธิ >>
-					</h4>
 				</td>
 				<td><center>
-					<h4>
 						<div id="fin">{{final}} ฿</div>
-					</h4>
 				</td>
 			</tr>
 		</table>
