@@ -1,0 +1,142 @@
+<html ng-app="potterApp">
+<head>
+	<title>Ban Nai Jin</title>
+	<meta charset="UTF-8">
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<script src="./node_modules/angular/angular.min.js"></script>
+	<script src="potter.js"></script>
+	<link rel="stylesheet" type="text/css" href="test.css">
+</head>
+<body ng-controller="PotterListController">
+<center>
+<div class="row">
+	<div class="col-xs-12">
+		<ul>
+		  <center>
+		  	<h1>Ban Nai Jin <small>sell a book</small></h1>
+		  </center>
+		</ul>
+	</div>
+	<div class="col-xs-10 col-xs-offset-1">
+		<table><br>
+			<tr>
+				<td ng-repeat="harry in book">
+				<table>
+					<tr>
+						<center>
+							<img ng-src="./image/{{harry.img}}" class="img-rounded" width="120px" height="150px">
+						</center>
+					</tr>
+					<tr>
+							<h4>
+								Harry Potter <small>{{harry.name}}</small>
+							</h4>
+						</tr>
+						<tr>
+							<center>
+								<h4>
+									{{harry.price}} ฿
+								</h4>
+							</center>
+						</tr>
+						<tr>
+							<center>
+								<button ng-click="add(harry)" class="btn btn-info">BUY</button>
+							</center>
+						</tr>
+				</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<br><br>
+<div class="row">
+	<div class="col-xs-5 col-xs-offset-1 aa">
+		<table class="table table-striped">
+			<tr>
+				<td colspan="3" class="info">
+					<center>
+						<h3>
+							ORDER <small>products</small>
+						</h3>
+					</center>
+				</td>
+			</tr>
+			<tr ng-repeat="choice in buy">
+				<td>
+					<h5>
+						Harry Potter<br>{{choice.name}}
+					</h5>
+				</td>
+				<td>
+					จำนวน :: {{choice.amount}} <br>
+					ราคา :: {{choice.amount*100}}฿
+				</td>
+				<td>
+					<button ng-click="remove(choice)" class="btn btn-danger">Remove</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="col-xs-4 col-xs-offset-1 aa">
+		<table class="table table-striped">
+			<tr>
+				<td colspan="3" class="danger">
+					<center>
+						<h3>
+							BILL <small>ชำระค่าสินค้า</small>
+						</h3>
+					</center>
+				</td>
+			</tr>
+			<tr>
+				<td><center>
+					<h4>
+						ราคารวม >>
+					</h4>
+				</td>
+				<td><center>
+					<h4>
+						{{sum}} ฿
+					</h4>
+				</td>
+			</tr>
+			<tr>
+				<td><center>
+					<h4>
+						ส่วนลด >>
+					</h4>
+				</td>
+				<td><center>
+					<h4>
+						{{promotion}} ฿
+					</h4>
+				</td>
+			</tr>
+			<tr>
+				<td><center>
+					<h4>
+						รวมสุทธิ >>
+					</h4>
+				</td>
+				<td><center>
+					<h4>
+						{{final}} ฿
+					</h4>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+</center>
+</body>
+</html>
